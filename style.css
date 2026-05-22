@@ -1118,4 +1118,14 @@ body.dark .footer {
   font-size:18px;
   align-self:center;
   padding:0 4px;
+}.footer-credits {
+  text-align: center;
+  padding: 16px 40px;
+  border-top: 1px solid rgba(0,180,255,0.1);
+  color: #556;
+  font-size: 13px;
+  line-height: 2;
+}
+.footer-credits strong {
+  color: #00c8ff;
 }
