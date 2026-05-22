@@ -9,7 +9,7 @@
   <rect x="2" y="2" width="96" height="96" rx="20" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.5"/>
   <rect x="22" y="15" width="56" height="52" rx="8" fill="#060f1e"/>
   <rect x="26" y="19" width="48" height="44" rx="6" fill="#0a1628"/>
-  <text x="50" y="52" text-anchor="middle" font-family="Arial Black" font-size="24" font-weight="900" fill="url(#g1)">TZ</text>
+  <text x="50" y="52" text-anchor="middle" font-family="Arial Black" font-size="24" font-weight="900" fill="url(#g1)">PZ</text>
   <rect x="38" y="67" width="24" height="3" rx="1.5" fill="#00c8ff" opacity="0.5"/>
-  <text x="50" y="85" text-anchor="middle" font-family="Arial" font-size="7" font-weight="700" fill="#00c8ff" letter-spacing="2">ZONE</text>
+  <text x="50" y="85" text-anchor="middle" font-family="Arial" font-size="7" font-weight="700" fill="#00c8ff" letter-spacing="2">PHONE</text>
 </svg>
