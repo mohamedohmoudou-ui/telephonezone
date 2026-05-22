@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TelephoneZone – Mon Compte</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <span class="logo-icon-sm">📱</span>
+    <h2>TelephoneZone</h2>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-selected" onclick="toggleLangMenu()">🇬🇧 EN <span>▾</span></button>
+      <div class="lang-menu" id="langMenu">
+        <button onclick="setLang('ar')">🇲🇦 العربية</button>
+        <button onclick="setLang('fr')">🇫🇷 Français</button>
+        <button onclick="setLang('en')">🇬🇧 English</button>
+      </div>
+    </div>
+    <span class="cart-btn" onclick="openCart()">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-count" style="display:none">0</span>
+    </span>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="inner-page">
+  <h2 class="inner-title">👤 Mon Compte</h2>
+  <div class="inner-card account-card">
+    <div class="account-avatar">TZ</div>
+    <h3>TelephoneZone User</h3>
+    <p style="color:var(--gray);margin-bottom:24px">telephonezone2026@gmail.com</p>
+    <div class="account-info-row"><span>📞 Téléphone</span><span>0637904920</span></div>
+    <div class="account-info-row"><span>🏙️ Ville</span><span>Maroc</span></div>
+    <div class="account-info-row"><span>📦 Commandes</span><span>0</span></div>
+    <button class="btn" style="margin-top:24px;max-width:200px">✏️ Modifier</button>
+  </div>
+</div>
+
+<a href="https://wa.me/212637904920" class="wa-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

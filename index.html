@@ -1,0 +1,1414 @@
+cat > /mnt/user-data/outputs/index.html << 'ENDOFFILE'
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>phoneZone – إكسسوارات الهاتف</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== WELCOME SCREEN ===== -->
+<div id="welcomeScreen">
+  <div class="welcome-bg"></div>
+  <div class="welcome-card">
+    <div class="welcome-logo">
+      <span class="logo-icon">📱</span>
+      <h1>phoneZone</h1>
+    </div>
+    <p class="welcome-sub">Your favorite phone accessories store</p>
+<div class="welcome-features">
+  <span>🚀 Fast Delivery</span>
+  <span>💎 High Quality</span>
+  <span>🔒 Secure Payment</span>
+</div>
+<button class="welcome-btn" onclick="enterSite()">
+  <span>Enter Store</span>
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <span class="logo-icon-sm">📱</span>
+    <h2>phoneZone</h2>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home"     data-ar="الرئيسية" data-fr="Accueil"  data-en="Home">Home</a></li>
+    <li><a href="#products" data-ar="المنتجات" data-fr="Produits" data-en="Products">Products</a></li>
+    <li><a href="#contact"  data-ar="التواصل"  data-fr="Contact"  data-en="Contact">Contact</a></li>
+  </ul>
+  <div class="menu-container">
+    <button onclick="toggleMenu()" class="menu-btn">⋮</button>
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="parametres.html">Paramètres</a>
+      <a href="compte.html">Mon compte</a>
+      <a href="commandes.html">Mes commandes</a>
+      <a href="aide.html">Aide</a>
+    </div>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-selected" onclick="toggleLangMenu()">🇬🇧 EN <span>▾</span></button>
+    <div class="lang-menu" id="langMenu">
+      <button onclick="setLang('ar')">🇲🇦 العربية</button>
+      <button onclick="setLang('fr')">🇫🇷 Français</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+    </div>
+  </div>
+  <span class="cart-btn" onclick="openCart()">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <span class="cart-count" style="display:none">0</span>
+  </span>
+  <button class="hamburger" id="hamburger" onclick="openSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="hero-badge">✨ New Collection 2026</span>
+    <h2 data-ar="أفضل إكسسوارات الهاتف" data-fr="Meilleurs Accessoires" data-en="Best Phone Accessories">Best Phone Accessories</h2>
+    <p data-ar="اكتشف منتجات رائعة بأسعار مميزة" data-fr="Découvrez des produits incroyables" data-en="Discover amazing products at unbeatable prices">Discover amazing products at unbeatable prices</p>
+    <div class="hero-btns">
+      <a href="#products" class="shop-btn" data-ar="تسوق الآن" data-fr="Acheter maintenant" data-en="Shop Now">Shop Now</a>
+      <a href="https://wa.me/212637904920" target="_blank" class="wa-btn-hero">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-glow"></div>
+    <div class="floating-icons">
+      <span style="--d:0s">📱</span>
+      <span style="--d:0.5s">🎧</span>
+      <span style="--d:1s">⌚</span>
+      <span style="--d:1.5s">🔋</span>
+      <span style="--d:2s">🔌</span>
+    </div>
+  </div>
+</section>
+<!-- ===== BRANDS MARQUEE ===== -->
+<div class="brands-marquee-section">
+  <p class="brands-label">Compatible with all major brands</p>
+  <div class="brands-wrapper">
+    <div class="brands-track">
+      <div class="brand-item"><span>Samsung</span></div>
+      <div class="brand-item"><span>Apple</span></div>
+      <div class="brand-item"><span>Huawei</span></div>
+      <div class="brand-item"><span>Xiaomi</span></div>
+      <div class="brand-item"><span>OPPO</span></div>
+      <div class="brand-item"><span>OnePlus</span></div>
+      <div class="brand-item"><span>Nokia</span></div>
+      <div class="brand-item"><span>Sony</span></div>
+      <div class="brand-item"><span>Motorola</span></div>
+      <div class="brand-item"><span>Vivo</span></div>
+      <!-- نسخة ثانية للـ loop -->
+      <div class="brand-item"><span>Samsung</span></div>
+      <div class="brand-item"><span>Apple</span></div>
+      <div class="brand-item"><span>Huawei</span></div>
+      <div class="brand-item"><span>Xiaomi</span></div>
+      <div class="brand-item"><span>OPPO</span></div>
+      <div class="brand-item"><span>OnePlus</span></div>
+      <div class="brand-item"><span>Nokia</span></div>
+      <div class="brand-item"><span>Sony</span></div>
+      <div class="brand-item"><span>Motorola</span></div>
+      <div class="brand-item"><span>Vivo</span></div>
+    </div>
+  </div>
+</div>
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+  <div class="section-header">
+    <h2 data-ar="منتجاتنا" data-fr="Nos Produits" data-en="Our Products">Our Products</h2>
+    <p data-ar="اختر ما يناسبك" data-fr="Choisissez ce qui vous convient" data-en="Find what suits you best">Find what suits you best</p>
+  </div>
+  <div class="cards-grid">
+                        <!-- ===== CARD 1: Headphones ===== -->
+<!-- ===== CARD: Microphone Téléphone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Lampe LED Selfie', 299, 'image/Lampe LED Selfie.png', 'Professional selfie lighting', 'Adjustable brightness levels', 'Rechargeable and portable')">
+    <img src="image/Lampe LED Selfie.png" alt="Lampe LED Selfie" />
+  </div>
+  <div class="card-body">
+    <h3>Lampe LED Selfie</h3>
+    <p class="price">299<span>DH</span></p>
+    <ul>
+      <li>✓ Professional selfie lighting</li>
+      <li>✓ Adjustable brightness levels</li>
+      <li>✓ Rechargeable and portable</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Lampe LED Selfie', 299, 'image/Lampe LED Selfie.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Lampe%20LED%20Selfie%20-%20299DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+ <div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Chargeur Sans Fil LED Rapide', 199, 'image/Chargeur Sans Fil LED Rapide.jpg', 'Fast wireless charging technology', 'Elegant LED light effect', 'Safe and efficient charging')">
+    <img src="image/Chargeur Sans Fil LED Rapide.jpg" alt="Chargeur Sans Fil LED Rapide" />
+  </div>
+  <div class="card-body">
+    <h3>Chargeur Sans Fil LED Rapide</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li>✓ Fast wireless charging technology</li>
+      <li>✓ Elegant LED light effect</li>
+      <li>✓ Safe and efficient charging</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Chargeur Sans Fil LED Rapide', 199, 'image/Chargeur Sans Fil LED Rapide.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Chargeur%20Sans%20Fil%20LED%20Rapide%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+ <div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Câble Audio Premium AUX', 49, 'image/Câble Audio Premium AUX.png', 'Crystal clear sound quality', 'Tangle-free durable cable', 'Universal 3.5mm compatibility')">
+    <img src="image/Câble Audio Premium AUX.png" alt="Câble Audio Premium AUX" />
+  </div>
+  <div class="card-body">
+    <h3>Câble Audio Premium AUX</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li>✓ Crystal clear sound quality</li>
+      <li>✓ Tangle-free durable cable</li>
+      <li>✓ Universal 3.5mm compatibility</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Câble Audio Premium AUX', 49, 'image/Câble Audio Premium AUX.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Câble%20Audio%20Premium%20AUX%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+ <div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Adaptateur USB-C Hub Pro', 99, 'image/Adaptateur USB-C Hub Pro.jpg', 'Multiple USB expansion ports', 'High-speed data transfer', 'Durable premium build quality')">
+    <img src="image/Adaptateur USB-C Hub Pro.jpg" alt="Adaptateur USB-C Hub Pro" />
+  </div>
+  <div class="card-body">
+    <h3>Adaptateur USB-C Hub Pro</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li>✓ Multiple USB expansion ports</li>
+      <li>✓ High-speed data transfer</li>
+      <li>✓ Durable premium build quality</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Adaptateur USB-C Hub Pro', 99, 'image/Adaptateur USB-C Hub Pro.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Adaptateur%20USB-C%20Hub%20Pro%20-%20100DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+ <div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Adaptateur Lightning Compact', 99, 'image/Adaptateur Lightning Compact.jpg', 'Fast and stable data transfer', 'Compact and lightweight design', 'Compatible with Apple devices')">
+    <img src="image/Adaptateur Lightning Compact.jpg" alt="Adaptateur Lightning Compact" />
+  </div>
+  <div class="card-body">
+    <h3>Adaptateur Lightning Compact</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li>✓ Fast and stable data transfer</li>
+      <li>✓ Compact and lightweight design</li>
+      <li>✓ Compatible with Apple devices</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Adaptateur Lightning Compact', 99, 'image/Adaptateur Lightning Compact.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Adaptateur%20Lightning%20Compact%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Microphone Téléphone', 399, 'image/Microphone Téléphone.png', 'Crystal clear voice recording', 'Compatible with all smartphones', 'Plug and play no app needed')">
+    <img src="image/Microphone Téléphone.png" alt="Microphone Téléphone" />
+  </div>
+  <div class="card-body">
+    <h3>Microphone Téléphone</h3>
+    <p class="price">399<span>DH</span></p>
+    <ul>
+      <li data-ar="تسجيل صوت نقي وواضح" data-fr="Enregistrement vocal clair et net" data-en="Crystal clear voice recording">✓ Crystal clear voice recording</li>
+      <li data-ar="متوافق مع جميع الهواتف" data-fr="Compatible avec tous les smartphones" data-en="Compatible with all smartphones">✓ Compatible with all smartphones</li>
+      <li data-ar="توصيل وتشغيل بدون تطبيق" data-fr="Plug and play sans application" data-en="Plug and play no app needed">✓ Plug and play no app needed</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Microphone Téléphone', 399, 'image/Microphone Téléphone.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Microphone%20Téléphone%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Souris Gaming Mouse ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Souris Gaming Mouse', 99, 'image/Souris Gaming Mouse.png', 'High precision optical sensor', 'Ergonomic design for long sessions', 'RGB lighting with multiple effects')">
+    <img src="image/Souris Gaming Mouse.png" alt="Souris Gaming Mouse" />
+  </div>
+  <div class="card-body">
+    <h3>Souris Gaming Mouse</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="مستشعر بصري عالي الدقة" data-fr="Capteur optique haute précision" data-en="High precision optical sensor">✓ High precision optical sensor</li>
+      <li data-ar="تصميم مريح لجلسات طويلة" data-fr="Design ergonomique pour longues sessions" data-en="Ergonomic design for long sessions">✓ Ergonomic design for long sessions</li>
+      <li data-ar="إضاءة RGB بتأثيرات متعددة" data-fr="Éclairage RGB avec effets multiples" data-en="RGB lighting with multiple effects">✓ RGB lighting with multiple effects</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Souris Gaming Mouse', 99, 'image/Souris Gaming Mouse.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Souris%20Gaming%20Mouse%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Trépied Téléphone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Trépied Téléphone', 99, 'image/Trépied Téléphone.png', 'Adjustable height up to 1.5m', 'Compatible with all smartphones', 'Stable and lightweight design')">
+    <img src="image/Trépied Téléphone.png" alt="Trépied Téléphone" />
+  </div>
+  <div class="card-body">
+    <h3>Trépied Téléphone</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="ارتفاع قابل للتعديل حتى 1.5 متر" data-fr="Hauteur réglable jusqu'à 1.5m" data-en="Adjustable height up to 1.5m">✓ Adjustable height up to 1.5m</li>
+      <li data-ar="متوافق مع جميع الهواتف" data-fr="Compatible avec tous les smartphones" data-en="Compatible with all smartphones">✓ Compatible with all smartphones</li>
+      <li data-ar="تصميم مستقر وخفيف الوزن" data-fr="Design stable et léger" data-en="Stable and lightweight design">✓ Stable and lightweight design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Trépied Téléphone', 99, 'image/Trépied Téléphone.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Trépied%20Téléphone%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Objectif Caméra Smartphone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Objectif Caméra Smartphone', 39, 'image/Objectif Caméra Smartphone 4.png', 'Wide angle and macro lens included', 'Easy clip-on installation', 'Crystal clear HD photos')">
+    <img src="image/Objectif Caméra Smartphone 4.png" alt="Objectif Caméra Smartphone" />
+  </div>
+  <div class="card-body">
+    <h3>Objectif Caméra Smartphone</h3>
+    <p class="price">39<span>DH</span></p>
+    <ul>
+      <li data-ar="عدسة زاوية واسعة وماكرو" data-fr="Objectif grand angle et macro inclus" data-en="Wide angle and macro lens included">✓ Wide angle and macro lens included</li>
+      <li data-ar="تركيب سهل بالمشبك" data-fr="Installation facile par clip" data-en="Easy clip-on installation">✓ Easy clip-on installation</li>
+      <li data-ar="صور HD نقية وواضحة" data-fr="Photos HD claires et nettes" data-en="Crystal clear HD photos">✓ Crystal clear HD photos</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Objectif Caméra Smartphone', 39, 'image/Objectif Caméra Smartphone 4.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Objectif%20Caméra%20Smartphone%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Power Bank 1000 ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Power Bank 1000', 199, 'image/Power Bank 1000.png', 'Compact and easy to carry', 'Fast charging technology', 'Compatible with all devices')">
+    <img src="image/Power Bank 1000.png" alt="Power Bank 1000" />
+  </div>
+  <div class="card-body">
+    <h3>Power Bank 1000</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="صغير الحجم وسهل الحمل" data-fr="Compact et facile à transporter" data-en="Compact and easy to carry">✓ Compact and easy to carry</li>
+      <li data-ar="تقنية الشحن السريع" data-fr="Technologie de charge rapide" data-en="Fast charging technology">✓ Fast charging technology</li>
+      <li data-ar="متوافق مع جميع الأجهزة" data-fr="Compatible avec tous les appareils" data-en="Compatible with all devices">✓ Compatible with all devices</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Power Bank 1000', 199, 'image/Power Bank 1000.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Power%20Bank%201000%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Power Bank 2000MA ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Power Bank 2000MA', 99, 'image/Power Bank 2000MA.png', 'Large 20000mAh capacity', 'Dual USB output ports', 'Overcharge and overheat protection')">
+    <img src="image/Power Bank 2000MA.png" alt="Power Bank 2000MA" />
+  </div>
+  <div class="card-body">
+    <h3>Power Bank 2000MA</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="سعة كبيرة 20000 مللي أمبير" data-fr="Grande capacité 20000mAh" data-en="Large 20000mAh capacity">✓ Large 20000mAh capacity</li>
+      <li data-ar="منفذا USB مزدوجان" data-fr="Double port de sortie USB" data-en="Dual USB output ports">✓ Dual USB output ports</li>
+      <li data-ar="حماية من الشحن الزائد والحرارة" data-fr="Protection surcharge et surchauffe" data-en="Overcharge and overheat protection">✓ Overcharge and overheat protection</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Power Bank 2000MA', 99, 'image/Power Bank 2000MA.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Power%20Bank%202000MA%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Power Bank ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Power Bank', 199, 'image/Power Bank.png', 'Slim and lightweight design', 'Fast and safe charging', 'LED battery indicator')">
+    <img src="image/Power Bank.png" alt="Power Bank" />
+  </div>
+  <div class="card-body">
+    <h3>Power Bank</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="تصميم نحيف وخفيف الوزن" data-fr="Design fin et léger" data-en="Slim and lightweight design">✓ Slim and lightweight design</li>
+      <li data-ar="شحن سريع وآمن" data-fr="Charge rapide et sécurisée" data-en="Fast and safe charging">✓ Fast and safe charging</li>
+      <li data-ar="مؤشر LED لمستوى البطارية" data-fr="Indicateur LED de batterie" data-en="LED battery indicator">✓ LED battery indicator</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Power Bank', 199, 'image/Power Bank.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Power%20Bank%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Câble Lightning ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Câble Lightning', 49, 'image/Câble Lightning.png', 'Fast data transfer and charging', 'Durable braided nylon material', 'Compatible with all iPhone models')">
+    <img src="image/Câble Lightning.png" alt="Câble Lightning" />
+  </div>
+  <div class="card-body">
+    <h3>Câble Lightning</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="نقل بيانات وشحن سريع" data-fr="Transfert de données et charge rapide" data-en="Fast data transfer and charging">✓ Fast data transfer and charging</li>
+      <li data-ar="مادة نايلون مضفر متينة" data-fr="Matériau nylon tressé résistant" data-en="Durable braided nylon material">✓ Durable braided nylon material</li>
+      <li data-ar="متوافق مع جميع موديلات iPhone" data-fr="Compatible avec tous les modèles iPhone" data-en="Compatible with all iPhone models">✓ Compatible with all iPhone models</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Câble Lightning', 49, 'image/Câble Lightning.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Câble%20Lightning%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Câble Type-C ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Câble Type-C', 39, 'image/Câble Type-C.png', 'Supports 100W fast charging', 'Universal USB-C compatibility', 'Anti-tangle flexible design')">
+    <img src="image/Câble Type-C.png" alt="Câble Type-C" />
+  </div>
+  <div class="card-body">
+    <h3>Câble Type-C</h3>
+    <p class="price">39<span>DH</span></p>
+    <ul>
+      <li data-ar="يدعم الشحن السريع 100W" data-fr="Supporte la charge rapide 100W" data-en="Supports 100W fast charging">✓ Supports 100W fast charging</li>
+      <li data-ar="متوافق مع USB-C العالمي" data-fr="Compatibilité USB-C universelle" data-en="Universal USB-C compatibility">✓ Universal USB-C compatibility</li>
+      <li data-ar="تصميم مرن ومضاد للتشابك" data-fr="Design flexible anti-enchevêtrement" data-en="Anti-tangle flexible design">✓ Anti-tangle flexible design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Câble Type-C', 39, 'image/Câble Type-C.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Câble%20Type-C%20-%2039DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Black Wireless Earbud ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Black Wireless Earbud.jpg', 149, 'image/Black Wireless Earbud.jpg', 'Active noise cancellation', 'Wireless charging case included', 'Up to 24 hours battery life')">
+    <img src="image/Black Wireless Earbud.jpg" alt="Black Wireless Earbud" />
+  </div>
+  <div class="card-body">
+    <h3>Black Wireless Earbud</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="إلغاء الضوضاء النشط" data-fr="Annulation active du bruit" data-en="Active noise cancellation">✓ Active noise cancellation</li>
+      <li data-ar="علبة شحن لاسلكية مرفقة" data-fr="Boîtier de charge sans fil inclus" data-en="Wireless charging case included">✓ Wireless charging case included</li>
+      <li data-ar="بطارية تدوم حتى 24 ساعة" data-fr="Batterie jusqu'à 24 heures" data-en="Up to 24 hours battery life">✓ Up to 24 hours battery life</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Black Wireless Earbud', 149, 'image/Black Wireless Earbud.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Black%20Wireless%20Earbud%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Colorful Silicone Cover ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Colorful Silicone Cover', 49, 'image/Colorful Silicone Cover.jpg', 'Available in multiple colors', 'Soft anti-slip grip', 'Protects against scratches and shocks')">
+    <img src="image/Colorful Silicone Cover.jpg" alt="Colorful Silicone Cover" />
+  </div>
+  <div class="card-body">
+    <h3>Colorful Silicone Cover</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="متوفر بألوان متعددة" data-fr="Disponible en plusieurs couleurs" data-en="Available in multiple colors">✓ Available in multiple colors</li>
+      <li data-ar="قبضة ناعمة ومضادة للانزلاق" data-fr="Grip doux anti-dérapant" data-en="Soft anti-slip grip">✓ Soft anti-slip grip</li>
+      <li data-ar="حماية من الخدوش والصدمات" data-fr="Protection contre rayures et chocs" data-en="Protects against scratches and shocks">✓ Protects against scratches and shocks</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Colorful Silicone Cover', 49, 'image/Colorful Silicone Cover.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Colorful%20Silicone%20Cover%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Coque de téléphone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Coque de téléphone', 49, 'image/Coque de téléphone4.jpg', 'Slim fit perfect protection', 'Raised edges for screen safety', 'Easy access to all ports and buttons')">
+    <img src="image/Coque de téléphone4.jpg" alt="Coque de téléphone" />
+  </div>
+  <div class="card-body">
+    <h3>Coque de téléphone</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="ملاءمة نحيفة وحماية مثالية" data-fr="Ajustement parfait et protection optimale" data-en="Slim fit perfect protection">✓ Slim fit perfect protection</li>
+      <li data-ar="حواف مرتفعة لحماية الشاشة" data-fr="Bords surélevés pour la sécurité de l'écran" data-en="Raised edges for screen safety">✓ Raised edges for screen safety</li>
+      <li data-ar="سهولة الوصول لجميع المنافذ والأزرار" data-fr="Accès facile à tous les ports et boutons" data-en="Easy access to all ports and buttons">✓ Easy access to all ports and buttons</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Coque de téléphone', 49, 'image/Coque de téléphone4.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Coque%20de%20téléphone%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Coque Silicone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Coque Silicone', 199, 'image/Coque Silicone 1.png', 'Ultra soft premium silicone', 'Full body drop protection', 'Wireless charging compatible')">
+    <img src="image/Coque Silicone 1.png" alt="Coque Silicone" />
+  </div>
+  <div class="card-body">
+    <h3>Coque Silicone</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="سيليكون ممتاز فائق النعومة" data-fr="Silicone premium ultra doux" data-en="Ultra soft premium silicone">✓ Ultra soft premium silicone</li>
+      <li data-ar="حماية كاملة من السقوط" data-fr="Protection complète contre les chutes" data-en="Full body drop protection">✓ Full body drop protection</li>
+      <li data-ar="متوافق مع الشحن اللاسلكي" data-fr="Compatible avec la charge sans fil" data-en="Wireless charging compatible">✓ Wireless charging compatible</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Coque Silicone', 199, 'image/Coque Silicone 1.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Coque%20Silicone%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD: Lampe LED Selfie ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Lampe LED Selfie', 199, 'image/Lampe LED Selfie.png', 'Adjustable brightness and color temperature', 'Flexible gooseneck for any angle', 'Perfect for photos and video calls')">
+    <img src="image/Lampe LED Selfie.png" alt="Lampe LED Selfie" />
+  </div>
+  <div class="card-body">
+    <h3>Lampe LED Selfie</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="سطوع وحرارة لون قابلان للتعديل" data-fr="Luminosité et température de couleur réglables" data-en="Adjustable brightness and color temperature">✓ Adjustable brightness and color temperature</li>
+      <li data-ar="عنق مرن لأي زاوية" data-fr="Col flexible pour n'importe quel angle" data-en="Flexible gooseneck for any angle">✓ Flexible gooseneck for any angle</li>
+      <li data-ar="مثالية للصور ومكالمات الفيديو" data-fr="Parfaite pour les photos et appels vidéo" data-en="Perfect for photos and video calls">✓ Perfect for photos and video calls</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Lampe LED Selfie', 199, 'image/Lampe LED Selfie.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Lampe%20LED%20Selfie%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Casque Audio Sans Fil', 149, 'image/headphones-with-minimalist-monochrome-background.jpg', 'High quality sound with powerful bass', 'Stable and fast Bluetooth 5.0', 'Battery lasts up to 30 hours')">
+    <img src="image/headphones-with-minimalist-monochrome-background.jpg" alt="Casque Audio Sans Fil" />
+  </div>
+  <div class="card-body">
+    <h3>Casque Audio Sans Fil</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت عالي الجودة مع باس قوي" data-fr="Son de haute qualité avec des basses puissantes" data-en="High quality sound with powerful bass">✓ High quality sound with powerful bass</li>
+      <li data-ar="اتصال بلوتوث 5.0 مستقر وسريع" data-fr="Connexion Bluetooth 5.0 stable et rapide" data-en="Stable and fast Bluetooth 5.0">✓ Stable and fast Bluetooth 5.0</li>
+      <li data-ar="بطارية تدوم حتى 30 ساعة" data-fr="Batterie qui dure jusqu'à 30 heures" data-en="Battery lasts up to 30 hours">✓ Battery lasts up to 30 hours</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Casque Audio Sans Fil', 149, 'image/headphones-with-minimalist-monochrome-background.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Casque%20Audio%20Sans%20Fil%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 2: MagSafe Wallet ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('MagSafe Wallet', 199, 'image/i-m-zion-YZHHrVhyc9I-unsplash.jpg', 'Easy to install and remove', 'Suitable for all ages', 'Improves phone grip')">
+    <img src="image/i-m-zion-YZHHrVhyc9I-unsplash.jpg" alt="MagSafe Wallet" />
+  </div>
+  <div class="card-body">
+    <h3>MagSafe Wallet</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="سهل التركيب والإزالة" data-fr="Facile à installer et à retirer" data-en="Easy to install and remove">✓ Easy to install and remove</li>
+      <li data-ar="مناسب لجميع الأعمار" data-fr="Convient à tous les âges" data-en="Suitable for all ages">✓ Suitable for all ages</li>
+      <li data-ar="يحسن التحكم في الهاتف" data-fr="Améliore la prise du téléphone" data-en="Improves phone grip">✓ Improves phone grip</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('MagSafe Wallet', 199, 'image/i-m-zion-YZHHrVhyc9I-unsplash.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20MagSafe%20Wallet%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 3: Lampe LED Selfie ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Lampe LED Selfie 1000mA', 399, 'image/Lampe LED Selfie 1000MA.png', 'Powerful lighting perfect for selfies', 'Multiple brightness levels', 'Lightweight and easy to carry')">
+    <img src="image/Lampe LED Selfie 1000MA.png" alt="Lampe LED Selfie 1000mA" />
+  </div>
+  <div class="card-body">
+    <h3>Lampe LED Selfie 1000mA</h3>
+    <p class="price">399<span>DH</span></p>
+    <ul>
+      <li data-ar="إضاءة قوية ومثالية للسيلفي" data-fr="Éclairage puissant parfait pour les selfies" data-en="Powerful lighting perfect for selfies">✓ Powerful lighting perfect for selfies</li>
+      <li data-ar="عدة مستويات للإضاءة" data-fr="Plusieurs niveaux de luminosité" data-en="Multiple brightness levels">✓ Multiple brightness levels</li>
+      <li data-ar="خفيفة وسهلة الحمل" data-fr="Légère et facile à transporter" data-en="Lightweight and easy to carry">✓ Lightweight and easy to carry</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Lampe LED Selfie 1000mA', 399, 'image/Lampe LED Selfie 1000MA.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Lampe%20LED%20Selfie%201000mA%20-%20399DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 4: Écouteurs TWS Pro ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Écouteurs TWS Pro', 99, 'image/Ecouteurs1.jpg', 'High-quality stereo sound', 'Compact and portable charging case', 'Fast Bluetooth connection')">
+    <img src="image/Ecouteurs1.jpg" alt="Écouteurs TWS Pro" />
+  </div>
+  <div class="card-body">
+    <h3>Écouteurs TWS Pro</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت ستيريو عالي الجودة" data-fr="Son stéréo de haute qualité" data-en="High-quality stereo sound">✓ High-quality stereo sound</li>
+      <li data-ar="علبة شحن صغيرة وسهلة الحمل" data-fr="Boîtier de charge compact et portable" data-en="Compact and portable charging case">✓ Compact and portable charging case</li>
+      <li data-ar="اتصال سريع عبر البلوتوث" data-fr="Connexion Bluetooth rapide" data-en="Fast Bluetooth connection">✓ Fast Bluetooth connection</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Écouteurs TWS Pro', 99, 'image/Ecouteurs1.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Écouteurs%20TWS%20Pro%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 5: Écouteurs Bass Plus ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Écouteurs Bass Plus', 199, 'image/Ecouteurs..jpg', 'Powerful and clear sound', 'Fast and stable Bluetooth connection', 'Long-lasting battery')">
+    <img src="image/Ecouteurs..jpg" alt="Écouteurs Bass Plus" />
+  </div>
+  <div class="card-body">
+    <h3>Écouteurs Bass Plus</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت قوي ونقي" data-fr="Son puissant et clair" data-en="Powerful and clear sound">✓ Powerful and clear sound</li>
+      <li data-ar="اتصال بلوتوث سريع ومستقر" data-fr="Connexion Bluetooth rapide et stable" data-en="Fast and stable Bluetooth connection">✓ Fast and stable Bluetooth connection</li>
+      <li data-ar="بطارية تدوم لساعات طويلة" data-fr="Batterie longue durée" data-en="Long-lasting battery">✓ Long-lasting battery</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Écouteurs Bass Plus', 199, 'image/Ecouteurs..jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Écouteurs%20Bass%20Plus%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 6: Écouteurs Élégance ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Écouteurs Élégance', 149, 'image/Écouteurs  Earphones.png', 'Elegant and modern design', 'Comfortable to wear all day', 'Made with high quality and beautiful shine')">
+    <img src="image/Écouteurs  Earphones.png" alt="Écouteurs Élégance" />
+  </div>
+  <div class="card-body">
+    <h3>Écouteurs Élégance</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="تصميم أنيق وعصري" data-fr="Design élégant et moderne" data-en="Elegant and modern design">✓ Elegant and modern design</li>
+      <li data-ar="مريح للارتداء طوال اليوم" data-fr="Confortable à porter toute la journée" data-en="Comfortable to wear all day">✓ Comfortable to wear all day</li>
+      <li data-ar="مصنوع بجودة عالية" data-fr="Fabriqué avec une haute qualité" data-en="Made with high quality and beautiful shine">✓ Made with high quality and beautiful shine</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Écouteurs Élégance', 149, 'image/Écouteurs  Earphones.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Écouteurs%20Élégance%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 7: Coque Silicone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Coque Silicone Premium', 99, 'image/Coque Silicone.png', 'Soft and comfortable silicone', 'Protects against shocks and scratches', 'Elegant and lightweight design')">
+    <img src="image/Coque Silicone.png" alt="Coque Silicone Premium" />
+  </div>
+  <div class="card-body">
+    <h3>Coque Silicone Premium</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="سيليكون ناعم ومريح في اليد" data-fr="Silicone doux et confortable" data-en="Soft and comfortable silicone">✓ Soft and comfortable silicone</li>
+      <li data-ar="تحمي الهاتف من الصدمات والخدوش" data-fr="Protège contre les chocs et les rayures" data-en="Protects against shocks and scratches">✓ Protects against shocks and scratches</li>
+      <li data-ar="تصميم أنيق وخفيف" data-fr="Design élégant et léger" data-en="Elegant and lightweight design">✓ Elegant and lightweight design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Coque Silicone Premium', 99, 'image/Coque Silicone.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Coque%20Silicone%20Premium%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 8: Clavier Gaming RGB Pro ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Clavier Gaming RGB Pro', 199, 'image/Clavier Gaming  Gaming Keyboard...png', 'Powerful lighting with professional effects', 'Ultra-fast response for gaming', 'Strong high-quality build')">
+    <img src="image/Clavier Gaming  Gaming Keyboard...png" alt="Clavier Gaming RGB Pro" />
+  </div>
+  <div class="card-body">
+    <h3>Clavier Gaming RGB Pro</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="إضاءة قوية بتأثيرات احترافية" data-fr="Éclairage puissant avec effets professionnels" data-en="Powerful lighting with professional effects">✓ Powerful lighting with professional effects</li>
+      <li data-ar="استجابة فائقة السرعة للألعاب" data-fr="Réponse ultra-rapide pour le gaming" data-en="Ultra-fast response for gaming">✓ Ultra-fast response for gaming</li>
+      <li data-ar="هيكل متين بجودة عالية" data-fr="Structure solide de haute qualité" data-en="Strong high-quality build">✓ Strong high-quality build</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Clavier Gaming RGB Pro', 199, 'image/Clavier Gaming  Gaming Keyboard...png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Clavier%20Gaming%20RGB%20Pro%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 9: Clavier Gaming RGB Lite ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Clavier Gaming RGB Lite', 149, 'image/Clavier Gaming  Gaming Keyboard.png', 'Colorful RGB lighting', 'Fast and comfortable keys', 'Perfect for gaming and work')">
+    <img src="image/Clavier Gaming  Gaming Keyboard.png" alt="Clavier Gaming RGB Lite" />
+  </div>
+  <div class="card-body">
+    <h3>Clavier Gaming RGB Lite</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="إضاءة RGB ملونة رائعة" data-fr="Éclairage RGB coloré" data-en="Colorful RGB lighting">✓ Colorful RGB lighting</li>
+      <li data-ar="أزرار سريعة ومريحة للكتابة" data-fr="Touches rapides et confortables" data-en="Fast and comfortable keys">✓ Fast and comfortable keys</li>
+      <li data-ar="تصميم مثالي للألعاب والعمل" data-fr="Design parfait pour le gaming et le travail" data-en="Perfect for gaming and work">✓ Perfect for gaming and work</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Clavier Gaming RGB Lite', 149, 'image/Clavier Gaming  Gaming Keyboard.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Clavier%20Gaming%20RGB%20Lite%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 10: Chargeur Sans Fil ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Chargeur Sans Fil', 49, 'image/Chargeur Sans Fil  Wireless Charger.png', 'High-speed fast charging', 'Protects the battery from damage', 'Durable for everyday use')">
+    <img src="image/Chargeur Sans Fil  Wireless Charger.png" alt="Chargeur Sans Fil" />
+  </div>
+  <div class="card-body">
+    <h3>Chargeur Sans Fil</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن سريع بقوة عالية" data-fr="Charge rapide haute puissance" data-en="High-speed fast charging">✓ High-speed fast charging</li>
+      <li data-ar="يحمي البطارية من التلف" data-fr="Protège la batterie contre les dommages" data-en="Protects the battery from damage">✓ Protects the battery from damage</li>
+      <li data-ar="متين ومقاوم للاستعمال اليومي" data-fr="Résistant pour une utilisation quotidienne" data-en="Durable for everyday use">✓ Durable for everyday use</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Chargeur Sans Fil', 49, 'image/Chargeur Sans Fil  Wireless Charger.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Chargeur%20Sans%20Fil%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 11: Chargeur Rapide 65W ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Chargeur Rapide 65W', 149, 'image/Chargeur Rapide  Fast Charger...png', 'Supports smart fast charging', 'Overheat protection', 'High quality and long lifespan')">
+    <img src="image/Chargeur Rapide  Fast Charger.png" alt="Chargeur Rapide 65W" />
+  </div>
+  <div class="card-body">
+    <h3>Chargeur Rapide 65W</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="يدعم الشحن السريع الذكي" data-fr="Prend en charge la charge rapide intelligente" data-en="Supports smart fast charging">✓ Supports smart fast charging</li>
+      <li data-ar="حماية من ارتفاع الحرارة" data-fr="Protection contre la surchauffe" data-en="Overheat protection">✓ Overheat protection</li>
+      <li data-ar="جودة عالية وعمر طويل" data-fr="Haute qualité et longue durée de vie" data-en="High quality and long lifespan">✓ High quality and long lifespan</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Chargeur Rapide 65W', 149, 'image/Chargeur Rapide  Fast Charger.png')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Chargeur%20Rapide%2065W%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 12: Chargeur Rapide Compact ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Chargeur Rapide Compact', 149, 'image/Chargeur Rapide  Fast Charger...png', 'Fast and safe charging', 'Compatible with all devices', 'Compact and portable design')">
+    <img src="image/Chargeur Rapide  Fast Charger...png" alt="Chargeur Rapide Compact" />
+  </div>
+  <div class="card-body">
+    <h3>Chargeur Rapide Compact</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن سريع وآمن للهاتف" data-fr="Charge rapide et sécurisée" data-en="Fast and safe charging">✓ Fast and safe charging</li>
+      <li data-ar="متوافق مع جميع الأجهزة" data-fr="Compatible avec tous les appareils" data-en="Compatible with all devices">✓ Compatible with all devices</li>
+      <li data-ar="تصميم صغير وسهل الحمل" data-fr="Design compact et portable" data-en="Compact and portable design">✓ Compact and portable design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Chargeur Rapide Compact', 149, 'image/Chargeur Rapide  Fast Charger...jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Chargeur%20Rapide%20Compact%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 13: Portable Phone Holder Keychain ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Portable Phone Holder Keychain', 29, 'image/Portable Phone Holder Keychain.jpg', 'Modern and attractive design', 'Comfortable for everyday use', 'Keeps the phone stable in hand')">
+    <img src="image/Portable Phone Holder Keychain.jpg" alt="Portable Phone Holder Keychain" />
+  </div>
+  <div class="card-body">
+    <h3>Portable Phone Holder Keychain</h3>
+    <p class="price">29<span>DH</span></p>
+    <ul>
+      <li data-ar="تصميم عصري وجذاب" data-fr="Design moderne et attrayant" data-en="Modern and attractive design">✓ Modern and attractive design</li>
+      <li data-ar="مريح للاستعمال اليومي" data-fr="Confortable pour un usage quotidien" data-en="Comfortable for everyday use">✓ Comfortable for everyday use</li>
+      <li data-ar="يحافظ على الهاتف ثابت في اليد" data-fr="Maintient le téléphone stable en main" data-en="Keeps the phone stable in hand">✓ Keeps the phone stable in hand</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Portable Phone Holder Keychain', 29, 'image/Portable Phone Holder Keychain.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Portable%20Phone%20Holder%20Keychain%20-%2029DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 14: Fashion Bear Key Ring ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Fashion Bear Key Ring', 49, 'image/Fashion Bear Key Ring.jpg', 'Easy to install and remove', 'Suitable for all ages', 'Improves phone grip')">
+    <img src="image/Fashion Bear Key Ring.jpg" alt="Fashion Bear Key Ring" />
+  </div>
+  <div class="card-body">
+    <h3>Fashion Bear Key Ring</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="سهل التركيب والإزالة" data-fr="Facile à installer et à retirer" data-en="Easy to install and remove">✓ Easy to install and remove</li>
+      <li data-ar="مناسب لجميع الأعمار" data-fr="Convient à tous les âges" data-en="Suitable for all ages">✓ Suitable for all ages</li>
+      <li data-ar="يحسن التحكم في الهاتف" data-fr="Améliore la prise du téléphone" data-en="Improves phone grip">✓ Improves phone grip</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Fashion Bear Key Ring', 49, 'image/Fashion Bear Key Ring.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Fashion%20Bear%20Key%20Ring%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 15: Luxury Leather AirTag Case ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Luxury Leather AirTag Case', 49, 'image/Luxury Leather AirTag Case.jpg', 'Resistant for long-term use', 'Practical and stylish design', 'Secure phone holding')">
+    <img src="image/Luxury Leather AirTag Case.jpg" alt="Luxury Leather AirTag Case" />
+  </div>
+  <div class="card-body">
+    <h3>Luxury Leather AirTag Case</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="مقاوم للتلف والاستعمال الطويل" data-fr="Résistant pour une utilisation longue" data-en="Resistant for long-term use">✓ Resistant for long-term use</li>
+      <li data-ar="تصميم عملي وأنيق" data-fr="Design pratique et élégant" data-en="Practical and stylish design">✓ Practical and stylish design</li>
+      <li data-ar="يثبت الهاتف بشكل آمن" data-fr="Maintien sécurisé du téléphone" data-en="Secure phone holding">✓ Secure phone holding</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Luxury Leather AirTag Case', 49, 'image/Luxury Leather AirTag Case.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Luxury%20Leather%20AirTag%20Case%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 16: Handmade Phone Accessory ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Handmade Phone Accessory', 99, 'image/Handmade Phone Accessory.jpg', 'Helps prevent phone drops', 'Compatible with most phones', 'Easy to hold in hand')">
+    <img src="image/Handmade Phone Accessory.jpg" alt="Handmade Phone Accessory" />
+  </div>
+  <div class="card-body">
+    <h3>Handmade Phone Accessory</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="يحافظ على الهاتف من السقوط" data-fr="Protège le téléphone contre les chutes" data-en="Helps prevent phone drops">✓ Helps prevent phone drops</li>
+      <li data-ar="تصميم جميل يناسب جميع الهواتف" data-fr="Design compatible avec tous les téléphones" data-en="Compatible with most phones">✓ Compatible with most phones</li>
+      <li data-ar="سهل الحمل في اليد" data-fr="Facile à tenir en main" data-en="Easy to hold in hand">✓ Easy to hold in hand</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Handmade Phone Accessory', 99, 'image/Handmade Phone Accessory.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Handmade%20Phone%20Accessory%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 17: Mini Charm Phone ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Mini Charm Phone', 49, 'image/Mini Charm Phone.jpg', 'Strong phone strap', 'Comfortable for daily use', 'Lightweight and practical')">
+    <img src="image/Mini Charm Phone.jpg" alt="Mini Charm Phone" />
+  </div>
+  <div class="card-body">
+    <h3>Mini Charm Phone</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="حبل قوي وآمن للهاتف" data-fr="Cordon solide pour téléphone" data-en="Strong phone strap">✓ Strong phone strap</li>
+      <li data-ar="مريح في الاستعمال اليومي" data-fr="Confortable pour un usage quotidien" data-en="Comfortable for daily use">✓ Comfortable for daily use</li>
+      <li data-ar="خفيف الوزن ولا يزعج الاستعمال" data-fr="Léger et pratique" data-en="Lightweight and practical">✓ Lightweight and practical</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Mini Charm Phone', 49, 'image/Mini Charm Phone.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Mini%20Charm%20Phone%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 18: Écouteurs Air Classic ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Écouteurs Air Classic', 99, 'image/Ecouteurs1.jpg', 'Fast Bluetooth 5.0 connection', 'Clear and crisp sound', 'Charging case included')">
+    <img src="image/Ecouteurs1.jpg" alt="Écouteurs Air Classic" />
+  </div>
+  <div class="card-body">
+    <h3>Écouteurs Air Classic</h3>
+    <p class="price">99<span>DH</span></p>
+    <ul>
+      <li data-ar="اتصال سريع بتقنية بلوتوث 5.0" data-fr="Connexion rapide Bluetooth 5.0" data-en="Fast Bluetooth 5.0 connection">✓ Fast Bluetooth 5.0 connection</li>
+      <li data-ar="صوت نقي وواضح" data-fr="Son clair et net" data-en="Clear and crisp sound">✓ Clear and crisp sound</li>
+      <li data-ar="علبة شحن مدمجة" data-fr="Boîtier de charge intégré" data-en="Charging case included">✓ Charging case included</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Écouteurs Air Classic', 99, 'image/Ecouteurs1.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Écouteurs%20Air%20Classic%20-%2099DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 19: Protective Mobile Case ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Protective Mobile Case', 49, 'image/Protective Mobile Case.jpg', 'Protection against daily scratches', 'Modern and stylish design', 'Compatible with wireless charging')">
+    <img src="image/Protective Mobile Case.jpg" alt="Protective Mobile Case" />
+  </div>
+  <div class="card-body">
+    <h3>Protective Mobile Case</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="حماية من الخدوش اليومية" data-fr="Protection contre les rayures quotidiennes" data-en="Protection against daily scratches">✓ Protection against daily scratches</li>
+      <li data-ar="تصميم عصري وأنيق" data-fr="Design moderne et élégant" data-en="Modern and stylish design">✓ Modern and stylish design</li>
+      <li data-ar="متوافق مع الشحن اللاسلكي" data-fr="Compatible avec la charge sans fil" data-en="Compatible with wireless charging">✓ Compatible with wireless charging</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Protective Mobile Case', 49, 'image/Protective Mobile Case.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Protective%20Mobile%20Case%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 20: Colorful Silicone Cover 69DH ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Colorful Silicone Cover', 69, 'image/Colorful Silicone Cover.jpg', 'Strong shock protection', 'Fingerprint resistant', 'Easy to install and remove')">
+    <img src="image/Colorful Silicone Cover.jpg" alt="Colorful Silicone Cover" />
+  </div>
+  <div class="card-body">
+    <h3>Colorful Silicone Cover</h3>
+    <p class="price">69<span>DH</span></p>
+    <ul>
+      <li data-ar="حماية من الصدمات القوية" data-fr="Protection contre les chocs forts" data-en="Strong shock protection">✓ Strong shock protection</li>
+      <li data-ar="مقاومة لبصمات الأصابع" data-fr="Résistant aux empreintes digitales" data-en="Fingerprint resistant">✓ Fingerprint resistant</li>
+      <li data-ar="تركيب وإزالة بسهولة" data-fr="Facile à installer et à retirer" data-en="Easy to install and remove">✓ Easy to install and remove</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Colorful Silicone Cover', 69, 'image/Colorful Silicone Cover.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Colorful%20Silicone%20Cover%20-%2069DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+<!-- ===== CARD 22: Colorful Silicone Cover 59DH ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Colorful Silicone Cover Flex', 59, 'image/Colorful Silicone Cover.jpg', 'Full phone protection', 'Made with durable materials', 'Easy access to all buttons and ports')">
+    <img src="image/Colorful Silicone Cover.jpg" alt="Colorful Silicone Cover Flex" />
+  </div>
+  <div class="card-body">
+    <h3>Colorful Silicone Cover Flex</h3>
+    <p class="price">59<span>DH</span></p>
+    <ul>
+      <li data-ar="حماية كاملة للهاتف" data-fr="Protection complète du téléphone" data-en="Full phone protection">✓ Full phone protection</li>
+      <li data-ar="مصنوع من مواد متينة وعالية الجودة" data-fr="Fabriqué avec des matériaux durables" data-en="Made with durable materials">✓ Made with durable materials</li>
+      <li data-ar="سهولة الوصول إلى جميع الأزرار والمنافذ" data-fr="Accès facile à tous les boutons et ports" data-en="Easy access to all buttons and ports">✓ Easy access to all buttons and ports</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Colorful Silicone Cover Flex', 59, 'image/Colorful Silicone Cover.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Colorful%20Silicone%20Cover%20Flex%20-%2059DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 23: Matte Finish Phone Cover ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Matte Finish Phone Cover', 49, 'image/Matte Finish Phone Cover.jpg', 'Strong protection against drops and shocks', 'Scratch and dust resistant', 'Stylish and lightweight design')">
+    <img src="image/Matte Finish Phone Cover.jpg" alt="Matte Finish Phone Cover" />
+  </div>
+  <div class="card-body">
+    <h3>Matte Finish Phone Cover</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="حماية قوية من الصدمات والسقوط" data-fr="Protection contre les chocs et les chutes" data-en="Strong protection against drops and shocks">✓ Strong protection against drops and shocks</li>
+      <li data-ar="مقاومة للخدوش والغبار" data-fr="Résistant aux rayures et à la poussière" data-en="Scratch and dust resistant">✓ Scratch and dust resistant</li>
+      <li data-ar="تصميم أنيق وخفيف الوزن" data-fr="Design élégant et léger" data-en="Stylish and lightweight design">✓ Stylish and lightweight design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Matte Finish Phone Cover', 49, 'image/Matte Finish Phone Cover.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Matte%20Finish%20Phone%20Cover%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 24: Soft Silicone Headphones Case ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Soft Silicone Headphones Case', 49, 'image/Soft Silicone Headphones Case.jpg', 'Strong protection for earbuds case', 'Scratch and shock resistant', 'Lightweight and easy to carry')">
+    <img src="image/Soft Silicone Headphones Case.jpg" alt="Soft Silicone Headphones Case" />
+  </div>
+  <div class="card-body">
+    <h3>Soft Silicone Headphones Case</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="حماية قوية لعلبة السماعات" data-fr="Protection solide pour les écouteurs" data-en="Strong protection for earbuds case">✓ Strong protection for earbuds case</li>
+      <li data-ar="مقاومة للخدوش والصدمات" data-fr="Résistant aux rayures et aux chocs" data-en="Scratch and shock resistant">✓ Scratch and shock resistant</li>
+      <li data-ar="تصميم خفيف وسهل الحمل" data-fr="Design léger et facile à transporter" data-en="Lightweight and easy to carry">✓ Lightweight and easy to carry</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Soft Silicone Headphones Case', 49, 'image/Soft Silicone Headphones Case.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Soft%20Silicone%20Headphones%20Case%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 25: Sony Wireless Noise Cancelling Headphones ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Sony Wireless Noise Cancelling Headphones', 149, 'image/Sony Wireless Noise Cancelling Headphones.jpg', 'Clear and crisp sound quality', 'Long wireless range', 'Modern and stylish design')">
+    <img src="image/Sony Wireless Noise Cancelling Headphones.jpg" alt="Sony Wireless Noise Cancelling Headphones" />
+  </div>
+  <div class="card-body">
+    <h3>Sony Wireless Noise Cancelling Headphones</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="جودة صوت نقية وواضحة" data-fr="Qualité sonore claire et nette" data-en="Clear and crisp sound quality">✓ Clear and crisp sound quality</li>
+      <li data-ar="مدى اتصال لاسلكي طويل" data-fr="Longue portée sans fil" data-en="Long wireless range">✓ Long wireless range</li>
+      <li data-ar="تصميم عصري وأنيق" data-fr="Design moderne et élégant" data-en="Modern and stylish design">✓ Modern and stylish design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Sony Wireless Noise Cancelling Headphones', 149, 'image/Sony Wireless Noise Cancelling Headphones.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Sony%20Wireless%20Noise%20Cancelling%20Headphones%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 26: Pro Noise Cancelling Headphones ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Pro Noise Cancelling Headphones', 199, 'image/Pro Noise Cancelling Headphones.jpg', 'Stable and fast Bluetooth connection', 'Foldable design for easy carrying', 'Compatible with all smartphones')">
+    <img src="image/Pro Noise Cancelling Headphones.jpg" alt="Pro Noise Cancelling Headphones" />
+  </div>
+  <div class="card-body">
+    <h3>Pro Noise Cancelling Headphones</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="اتصال بلوتوث مستقر وسريع" data-fr="Connexion Bluetooth stable et rapide" data-en="Stable and fast Bluetooth connection">✓ Stable and fast Bluetooth connection</li>
+      <li data-ar="تصميم قابل للطي لسهولة الحمل" data-fr="Design pliable pour un transport facile" data-en="Foldable design for easy carrying">✓ Foldable design for easy carrying</li>
+      <li data-ar="متوافق مع جميع الهواتف الذكية" data-fr="Compatible avec tous les smartphones" data-en="Compatible with all smartphones">✓ Compatible with all smartphones</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Pro Noise Cancelling Headphones', 199, 'image/Pro Noise Cancelling Headphones.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Pro%20Noise%20Cancelling%20Headphones%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 27: Noise Cancelling Bluetooth Headphones ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Noise Cancelling Bluetooth Headphones', 139, 'image/Noise Cancelling Bluetooth Headphones.jpg', 'Powerful sound with deep bass', 'Long battery life', 'Comfortable ear cushions for long use')">
+    <img src="image/Noise Cancelling Bluetooth Headphones.jpg" alt="Noise Cancelling Bluetooth Headphones" />
+  </div>
+  <div class="card-body">
+    <h3>Noise Cancelling Bluetooth Headphones</h3>
+    <p class="price">139<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت قوي مع باس عميق" data-fr="Son puissant avec basses profondes" data-en="Powerful sound with deep bass">✓ Powerful sound with deep bass</li>
+      <li data-ar="بطارية تدوم طويلاً" data-fr="Batterie longue durée" data-en="Long battery life">✓ Long battery life</li>
+      <li data-ar="وسادات أذن مريحة للاستعمال الطويل" data-fr="Coussinets confortables pour une longue utilisation" data-en="Comfortable ear cushions for long use">✓ Comfortable ear cushions for long use</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Noise Cancelling Bluetooth Headphones', 139, 'image/Noise Cancelling Bluetooth Headphones.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Noise%20Cancelling%20Bluetooth%20Headphones%20-%20139DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 28: Smart Bluetooth AirPods ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Smart Bluetooth AirPods', 119, 'image/Smart Bluetooth AirPods.jpg', 'Built-in microphone for clear calls', 'Touch control operation', 'Lightweight and portable')">
+    <img src="image/Smart Bluetooth AirPods.jpg" alt="Smart Bluetooth AirPods" />
+  </div>
+  <div class="card-body">
+    <h3>Smart Bluetooth AirPods</h3>
+    <p class="price">119<span>DH</span></p>
+    <ul>
+      <li data-ar="ميكروفون مدمج لمكالمات واضحة" data-fr="Microphone intégré pour appels clairs" data-en="Built-in microphone for clear calls">✓ Built-in microphone for clear calls</li>
+      <li data-ar="التحكم باللمس" data-fr="Contrôle tactile" data-en="Touch control operation">✓ Touch control operation</li>
+      <li data-ar="خفيفة الوزن وسهلة الحمل" data-fr="Léger et portable" data-en="Lightweight and portable">✓ Lightweight and portable</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Smart Bluetooth AirPods', 119, 'image/Smart Bluetooth AirPods.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Smart%20Bluetooth%20AirPods%20-%20119DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 29: Premium Wireless Earbuds ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Premium Wireless Earbuds', 59, 'image/Premium Wireless Earbuds.jpg', 'High-quality stereo sound', 'Stable Bluetooth connection', 'Long battery life')">
+    <img src="image/Premium Wireless Earbuds.jpg" alt="Premium Wireless Earbuds" />
+  </div>
+  <div class="card-body">
+    <h3>Premium Wireless Earbuds</h3>
+    <p class="price">59<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت ستيريو عالي الجودة" data-fr="Son stéréo de haute qualité" data-en="High-quality stereo sound">✓ High-quality stereo sound</li>
+      <li data-ar="اتصال بلوتوث مستقر" data-fr="Connexion Bluetooth stable" data-en="Stable Bluetooth connection">✓ Stable Bluetooth connection</li>
+      <li data-ar="بطارية طويلة الأمد" data-fr="Batterie longue durée" data-en="Long battery life">✓ Long battery life</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Premium Wireless Earbuds', 59, 'image/Premium Wireless Earbuds.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Premium%20Wireless%20Earbuds%20-%2059DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 30: PowerBank Pro Max 20000mAh ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('PowerBank Pro Max 20000mAh', 199, 'image/PowerBank Pro Max 20000mAh.gif', 'Fast Charging', 'Large Capacity', 'Long Battery Life')">
+    <img src="image/PowerBank Pro Max 20000mAh.gif" alt="PowerBank Pro Max 20000mAh" onerror="this.src='https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=800'" />
+    <span class="badge-hot">🔥 Hot</span>
+  </div>
+  <div class="card-body">
+    <h3>PowerBank Pro Max 20000mAh</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن سريع" data-fr="Charge rapide" data-en="Fast Charging">✓ Fast Charging</li>
+      <li data-ar="سعة كبيرة" data-fr="Grande capacité" data-en="Large Capacity">✓ Large Capacity</li>
+      <li data-ar="بطارية طويلة الأمد" data-fr="Batterie longue durée" data-en="Long Battery Life">✓ Long Battery Life</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('PowerBank Pro Max 20000mAh', 199, 'image/PowerBank Pro Max 20000mAh.gif')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20PowerBank%20Pro%20Max%2020000mAh%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 31: AirPods Pro ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('AirPods Pro', 299, 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800', 'Wireless', 'High Quality Sound', 'Long Battery Life')">
+    <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800" alt="AirPods Pro" />
+    <span class="badge-hot">⭐ Top</span>
+  </div>
+  <div class="card-body">
+    <h3>AirPods Pro</h3>
+    <p class="price">299<span>DH</span></p>
+    <ul>
+      <li data-ar="لاسلكي" data-fr="Sans fil" data-en="Wireless">✓ Wireless</li>
+      <li data-ar="جودة صوت عالية" data-fr="Son haute qualité" data-en="High Quality Sound">✓ High Quality Sound</li>
+      <li data-ar="بطارية طويلة الأمد" data-fr="Batterie longue durée" data-en="Long Battery Life">✓ Long Battery Life</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('AirPods Pro', 299, 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20AirPods%20Pro%20-%20299DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 32: Smart Watch ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Smart Watch', 399, 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800', 'Heart Rate Monitor', 'Water Resistant', 'Long Battery Life')">
+    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800" alt="Smart Watch" />
+    <span class="badge-hot">🆕 New</span>
+  </div>
+  <div class="card-body">
+    <h3>Smart Watch</h3>
+    <p class="price">399<span>DH</span></p>
+    <ul>
+      <li data-ar="مراقبة نبضات القلب" data-fr="Moniteur cardiaque" data-en="Heart Rate Monitor">✓ Heart Rate Monitor</li>
+      <li data-ar="مقاوم للماء" data-fr="Résistant à l'eau" data-en="Water Resistant">✓ Water Resistant</li>
+      <li data-ar="بطارية طويلة الأمد" data-fr="Batterie longue durée" data-en="Long Battery Life">✓ Long Battery Life</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Smart Watch', 399, 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Smart%20Watch%20-%20399DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 33: Mini Power Bank iPhone 17 ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Mini Power Bank iPhone 17', 199, 'image/Mini Power Bank iPhone 17.jpg', 'Fast Charging', 'Compatible iPhone 17', 'Overcharge Protection')">
+    <img src="image/Mini Power Bank iPhone 17.jpg.jpg" alt="Mini Power Bank iPhone 17" onerror="this.src='https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=800'" />
+  </div>
+  <div class="card-body">
+    <h3>Mini Power Bank iPhone 17</h3>
+    <p class="price">199<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن سريع" data-fr="Charge rapide" data-en="Fast Charging">✓ Fast Charging</li>
+      <li data-ar="متوافق مع iPhone 17" data-fr="Compatible iPhone 17" data-en="Compatible iPhone 17">✓ Compatible iPhone 17</li>
+      <li data-ar="حماية من الشحن الزائد" data-fr="Protection surcharge" data-en="Overcharge Protection">✓ Overcharge Protection</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Mini Power Bank iPhone 17', 199, 'image/Mini Power Bank iPhone 17.jpg.jpg')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Mini%20Power%20Bank%20iPhone%2017%20-%20199DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 35: Bluetooth Speaker ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Bluetooth Speaker', 149, 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800', 'Powerful Sound', 'Waterproof', 'Bluetooth 5.0')">
+    <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800" alt="Bluetooth Speaker" />
+    <span class="badge-hot">🆕 New</span>
+  </div>
+  <div class="card-body">
+    <h3>Bluetooth Speaker</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="صوت قوي ونقي" data-fr="Son puissant" data-en="Powerful Sound">✓ Powerful Sound</li>
+      <li data-ar="مقاوم للماء" data-fr="Résistant à l'eau" data-en="Waterproof">✓ Waterproof</li>
+      <li data-ar="بلوتوث 5.0" data-fr="Bluetooth 5.0" data-en="Bluetooth 5.0">✓ Bluetooth 5.0</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Bluetooth Speaker', 149, 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=800')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Bluetooth%20Speaker%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 36: Wireless Charger ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('Wireless Charger', 149, 'https://images.unsplash.com/photo-1615526675159-e248c3021d3f?q=80&w=800', '15W Wireless Charging', 'Universal Compatible', 'Slim Design')">
+    <img src="https://images.unsplash.com/photo-1615526675159-e248c3021d3f?q=80&w=800" alt="Wireless Charger" />
+    <span class="badge-hot">⚡ Fast</span>
+  </div>
+  <div class="card-body">
+    <h3>Wireless Charger</h3>
+    <p class="price">149<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن لاسلكي 15W" data-fr="Charge sans fil 15W" data-en="15W Wireless Charging">✓ 15W Wireless Charging</li>
+      <li data-ar="متوافق مع كل الأجهزة" data-fr="Compatible tous appareils" data-en="Universal Compatible">✓ Universal Compatible</li>
+      <li data-ar="تصميم أنيق" data-fr="Design élégant" data-en="Slim Design">✓ Slim Design</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('Wireless Charger', 149, 'https://images.unsplash.com/photo-1615526675159-e248c3021d3f?q=80&w=800')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20Wireless%20Charger%20-%20149DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARD 37: USB-C Cable Pro ===== -->
+<div class="card">
+  <div class="card-img-wrap" style="cursor:pointer"
+    onclick="goToProduct('USB-C Cable Pro', 49, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800', '100W Fast Charging', 'Durable and Flexible', '2m Length')">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800" alt="USB-C Cable Pro" />
+  </div>
+  <div class="card-body">
+    <h3>USB-C Cable Pro</h3>
+    <p class="price">49<span>DH</span></p>
+    <ul>
+      <li data-ar="شحن سريع 100W" data-fr="Charge rapide 100W" data-en="100W Fast Charging">✓ 100W Fast Charging</li>
+      <li data-ar="متين ومرن" data-fr="Solide et flexible" data-en="Durable & Flexible">✓ Durable & Flexible</li>
+      <li data-ar="طول 2 متر" data-fr="Longueur 2m" data-en="2m Length">✓ 2m Length</li>
+    </ul>
+    <div class="card-actions">
+      <button class="btn" onclick="addToCart('USB-C Cable Pro', 49, 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800')">Buy Now</button>
+      <a class="wa-card" href="https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20USB-C%20Cable%20Pro%20-%2049DH" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/212637904920" class="wa-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact" class="footer">
+  <div class="footer-container">
+    <div class="footer-box brand-box">
+      <span class="footer-logo-icon">📱</span>
+      <h3>Phonezone</h3>
+      <p>© 2026 All Rights Reserved</p>
+      <div class="footer-box" style="grid-column: 1 / -1;">
+  <div class="services-marquee-wrap">
+    <div class="services-marquee-track">
+      <div class="service-item"><span>🚀 Fast Delivery</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>🕐 24/7 Support</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>💎 High Quality</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>🔒 Secure Payment</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-instagram"></i><span>Instagram</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-solid fa-envelope"></i><span>telephonezone2026@gmail.com</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-solid fa-phone"></i><span>0637904920</span></div>
+      <span class="service-dot">·</span>
+      <!-- نسخة ثانية للـ loop -->
+      <div class="service-item"><span>🚀 Fast Delivery</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>🕐 24/7 Support</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>💎 High Quality</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><span>🔒 Secure Payment</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-instagram"></i><span>Instagram</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-solid fa-envelope"></i><span>telephonezone2026@gmail.com</span></div>
+      <span class="service-dot">·</span>
+      <div class="service-item"><i class="fa-solid fa-phone"></i><span>0637904920</span></div>
+      <span class="service-dot">·</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CART ===== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>🛒 Cart</h2>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty 🛍️</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">0.00 $</span>
+    </div>
+    <button class="btn-order" onclick="openOrderPopup()">Order Now 🚀</button>
+    <a class="btn-wa-order" id="btnWaOrder" href="https://wa.me/212637904920" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ===== ORDER POPUP ===== -->
+<div class="order-overlay" id="orderOverlay" onclick="closeOrderPopup()"></div>
+<div class="order-popup" id="orderPopup">
+  <div class="order-header">
+    <h2>📦 Confirm Order</h2>
+    <button class="close-order" onclick="closeOrderPopup()">✕</button>
+  </div>
+  <div class="order-summary" id="orderSummary"></div>
+  <div class="order-form">
+    <input type="text" id="clientName" placeholder="👤 Full Name" />
+    <input type="tel" id="clientPhone" placeholder="📞 Phone Number" />
+    <input type="text" id="clientCity" placeholder="🏙️ City" />
+    <textarea id="clientAddress" placeholder="📍 Address" rows="3"></textarea>
+  </div>
+  <div class="order-total-line">
+    <span>Grand Total:</span>
+    <span id="popupTotal">0.00 $</span>
+  </div>
+  <div id="paypal-button-container" style="margin-bottom:12px"></div>
+  <div class="order-btns">
+    <button class="btn-confirm" onclick="confirmOrder()">✅ Confirm Order</button>
+    <a class="btn-wa-confirm" id="waConfirmBtn" href="https://wa.me/212637904920" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+    </a>
+  </div>
+</div>
+
+<!-- ===== SUCCESS ===== -->
+<div class="success-overlay" id="successOverlay"></div>
+<div class="success-popup" id="successPopup">
+  <div class="success-icon">🎉</div>
+  <h2>Order Received!</h2>
+  <p id="successMsg"></p>
+  <button class="btn-close-success" onclick="closeSuccess()">OK</button>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+<script src="script.js"></script>
+<script>
+  const _originalEnterSite = enterSite;
+  enterSite = function() {
+    _originalEnterSite();
+    const savedScroll = localStorage.getItem('scrollPosition');
+    if (savedScroll !== null) {
+      setTimeout(() => {
+        window.scrollTo({ top: parseInt(savedScroll), behavior: 'instant' });
+        localStorage.removeItem('scrollPosition');
+      }, 700);
+    }
+  };
+</script>
+<!-- ===== MOBILE SIDEBAR ===== -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span>📱 TelephoneZone</span>
+    <button onclick="closeSidebar()" class="sidebar-close">✕</button>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#home"     onclick="closeSidebar()">🏠 Home</a>
+    <a href="#products" onclick="closeSidebar()">📦 Products</a>
+    <a href="#contact"  onclick="closeSidebar()">📞 Contact</a>
+    <a href="https://wa.me/212637904920" target="_blank">💬 WhatsApp</a>
+  </nav>
+  <div class="sidebar-footer">
+    <p>📧 telephonezone2026@gmail.com</p>
+    <p>📞 0637904920</p>
+  </div>
+</div>
+</body>
+</html>

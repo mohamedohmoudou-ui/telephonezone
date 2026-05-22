@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TelephoneZone – Product</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <span class="logo-icon-sm">📱</span>
+    <h2>TelephoneZone</h2>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-selected" onclick="toggleLangMenu()">🇬🇧 EN <span>▾</span></button>
+      <div class="lang-menu" id="langMenu">
+        <button onclick="setLang('ar')">🇲🇦 العربية</button>
+        <button onclick="setLang('fr')">🇫🇷 Français</button>
+        <button onclick="setLang('en')">🇬🇧 English</button>
+      </div>
+    </div>
+    <span class="cart-btn" onclick="openCart()">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-count" style="display:none">0</span>
+    </span>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PRODUCT PAGE -->
+<div class="product-page">
+  <a href="index.html" class="back-btn">
+<i class="fa-solid fa-arrow-left"></i> Back to Products
+</a>
+  <div class="product-container">
+    <div class="product-img-section">
+      <img id="productImg" src="" alt="" />
+    </div>
+    <div class="product-info-section">
+      <span class="product-badge">✨ TelephoneZone</span>
+      <h1 id="productName"></h1>
+      <p class="product-price" id="productPrice"></p>
+      <div class="product-features" id="productFeatures"></div>
+      <div class="product-btns">
+        <button class="btn product-buy-btn" id="buyNowBtn">
+          <i class="fa-solid fa-bag-shopping"></i> Buy Now
+        </button>
+        <a class="wa-btn-hero" id="waBtn" href="#" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+      <div class="product-trust">
+        <span>🚀 Fast Delivery</span>
+        <span>🔒 Secure Payment</span>
+        <span>💎 High Quality</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>🛒 Cart</h2>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty 🛍️</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">0.00 MAD</span>
+    </div>
+    <button class="btn-order" onclick="openOrderPopup()">Order Now 🚀</button>
+    <a class="btn-wa-order" id="btnWaOrder" href="https://wa.me/212637904920" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ORDER POPUP -->
+<div class="order-overlay" id="orderOverlay" onclick="closeOrderPopup()"></div>
+<div class="order-popup" id="orderPopup">
+  <div class="order-header">
+    <h2>📦 Confirm Order</h2>
+    <button class="close-order" onclick="closeOrderPopup()">✕</button>
+  </div>
+  <div class="order-summary" id="orderSummary"></div>
+  <div class="order-form">
+    <input type="text" id="clientName" placeholder="👤 Full Name" />
+    <input type="tel" id="clientPhone" placeholder="📞 Phone Number" />
+    <input type="text" id="clientCity" placeholder="🏙️ City" />
+    <textarea id="clientAddress" placeholder="📍 Address" rows="3"></textarea>
+  </div>
+  <div class="order-total-line">
+    <span>Grand Total:</span>
+    <span id="popupTotal">0.00 MAD</span>
+  </div>
+  <div id="paypal-button-container" style="margin-bottom:12px"></div>
+  <div class="order-btns">
+    <button class="btn-confirm" onclick="confirmOrder()">✅ Confirm Order</button>
+    <a class="btn-wa-confirm" id="waConfirmBtn" href="https://wa.me/212637904920" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+    </a>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-overlay" id="successOverlay"></div>
+<div class="success-popup" id="successPopup">
+  <div class="success-icon">🎉</div>
+  <h2>Order Received!</h2>
+  <p id="successMsg"></p>
+  <button class="btn-close-success" onclick="closeSuccess()">OK</button>
+</div>
+
+<a href="https://wa.me/212637904920" class="wa-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+<script src="script.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name  = params.get('name')  || 'Product';
+  const price = params.get('price') || '0';
+  const image = params.get('image') || '';
+  const feat1 = params.get('f1') || '';
+  const feat2 = params.get('f2') || '';
+  const feat3 = params.get('f3') || '';
+
+  document.getElementById('productName').textContent  = name;
+  document.getElementById('productPrice').textContent = price + ' MAD';
+  document.getElementById('productImg').src           = image;
+  document.getElementById('productImg').alt           = name;
+  document.title = 'TelephoneZone – ' + name;
+
+  document.getElementById('productFeatures').innerHTML = [feat1, feat2, feat3]
+    .filter(f => f)
+    .map(f => `<div class="feature-item"><i class="fa-solid fa-check"></i> ${f}</div>`)
+    .join('');
+
+  document.getElementById('buyNowBtn').onclick = function() {
+    addToCart(name, parseFloat(price), image);
+  };
+
+  document.getElementById('waBtn').href =
+    `https://wa.me/212637904920?text=مرحبا،%20أريد%20طلب:%20${encodeURIComponent(name)}%20-%20${price}%20MAD`;
+</script>
+</body>
+</html>

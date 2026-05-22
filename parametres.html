@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TelephoneZone – Paramètres</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <span class="logo-icon-sm">📱</span>
+    <h2>TelephoneZone</h2>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-ar="الرئيسية" data-fr="Accueil" data-en="Home">Home</a></li>
+    <li><a href="index.html#products" data-ar="المنتجات" data-fr="Produits" data-en="Products">Products</a></li>
+    <li><a href="index.html#contact" data-ar="التواصل" data-fr="Contact" data-en="Contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-selected" onclick="toggleLangMenu()">🇬🇧 EN <span>▾</span></button>
+      <div class="lang-menu" id="langMenu">
+        <button onclick="setLang('ar')">🇲🇦 العربية</button>
+        <button onclick="setLang('fr')">🇫🇷 Français</button>
+        <button onclick="setLang('en')">🇬🇧 English</button>
+      </div>
+    </div>
+    <span class="cart-btn" onclick="openCart()">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-count" style="display:none">0</span>
+    </span>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="inner-page">
+  <h2 class="inner-title">⚙️ Paramètres</h2>
+  <div class="inner-card">
+    <div class="setting-row">
+      <span>🌙 Dark Mode</span>
+      <label class="toggle-switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="setting-row">
+      <span>🔔 Notifications</span>
+      <label class="toggle-switch">
+        <input type="checkbox" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="setting-row">
+      <span>🌍 Langue</span>
+      <select>
+        <option>Français</option>
+        <option>العربية</option>
+        <option>English</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/212637904920" class="wa-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+<script>
+  const toggle = document.querySelector('.setting-row input[type="checkbox"]');
+  
+  // تحميل الحالة المحفوظة
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    toggle.checked = true;
+  }
+
+  // عند الضغط على الزر
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      document.body.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    }
+  });
+</script>
+</body>
+</html>
